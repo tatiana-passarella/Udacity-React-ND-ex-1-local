@@ -101,21 +101,23 @@ const movies = {
 
 class App extends Component {
   render() {
+    /*Return JSX*/
     return (
+      /*
+      Without this '(', JS will automatically put a ';' after the `return`
+      keyword.
+      */
       <div>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
-        <h2>Favorite Movies</h2>
-		    <ol>
-          {profiles.map((profile) => ( 
-            <div>
-            	<p>{users[profile.userID].name}'s favorite movie is {movies[profile.favoriteMovieID].name}.</p>
-            </div>
-          ))}
-      	</ol>
-      </div>
+           { profiles.map((profile)=>(
+                <li key={profile.id}>
+	    		{users[profile.userID].name} favorite movie is {movies[profile.favoriteMovieID].name}
+	    	</li>
+            )) }
+       </div>
     );
   }
 }
