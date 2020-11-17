@@ -111,7 +111,9 @@ class App extends Component {
         <div>
           // <FavoriteMovie profiles = {profiles} users = {users} movies = {movies}/>
           { profiles.map((profile)=>(
-            <li key={profile.id}>{users[profile.userID].name} favorite movie is {movies[profile.favoriteMovieID].name}.</li>
+            <li key={profile.id}>
+              {users[profile.userID].name} favorite movie is {movies[profile.favoriteMovieID].name}
+            </li>
           )) }
         </div>
 
